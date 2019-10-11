@@ -33,10 +33,11 @@ Ecologically grown cotton is grown using practices that help us protect biodiver
     <string name="quantity4">0</string>
     <string name="item_name_1">DOUBLE SIDED BOMBER JACKET</string>
     <string name="item_name_2">BASIC PETER PAN COLLAR SHIRT</string>
+    <string name="item_name_3">T-SHIRT WITH JAMES WILSON ILLUSTRATION</string>
     <string name="item_name_4">STRETCH SKINNY JEANS</string>
     <string name="subTotal_text_1">0</string>
-    <string name="subTotal_text2">0</string>
-    <string name="subtotal_text_3">0</string>
+    <string name="subTotal_text_2">0</string>
+    <string name="subTotal_text_3">0</string>
     <string name="subTotal_text_4">0</string>
 
 

@@ -2,13 +2,13 @@ package com.example.adeshinanicershop.model;
 
 public class CardItem {
     private String description;
-    private double price;
-    private int quantity;
-    private String image;
+    private String price;
+    private String quantity;
+    private int image;
     private String itemName;
     private String subTotal;
 
-    public CardItem(String description, double price, String background, String itemName, String subTotal, int quantity) {
+    public CardItem(String description, String price, int background, String itemName, String subTotal, String quantity) {
         this.description = description;
         this.price = price;
         this.image = background;
@@ -21,11 +21,11 @@ public class CardItem {
         return description;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
@@ -37,12 +37,12 @@ public class CardItem {
         return subTotal;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
@@ -50,7 +50,7 @@ public class CardItem {
         this.description = description;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -62,7 +62,7 @@ public class CardItem {
         this.subTotal = subTotal;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 
