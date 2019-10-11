@@ -15,13 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "android.adeshinashop.extra.MESSAGE";
     private RecyclerView mRecyclerView;
     private ProductAdapter mAdapter;
-    ArrayList<CardItem> listOfItems;
+    LinkedList<CardItem> listOfItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +30,11 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        listOfItems= new ArrayList<CardItem>();
+        listOfItems= new LinkedList<CardItem>();
         populateCard();
 
         mRecyclerView = findViewById(R.id.recyclerview);
-        mAdapter = new ProductAdapter(this, mProductList);
+        mAdapter = new ProductAdapter(this, listOfItems);
 
         mRecyclerView.setAdapter(mAdapter);
         // Give the RecyclerView a default layout manager.
