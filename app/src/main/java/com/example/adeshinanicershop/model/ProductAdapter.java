@@ -1,6 +1,7 @@
 package com.example.adeshinanicershop.model;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,7 @@ import java.util.LinkedList;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
         ProductViewHolder>  {
-    TextView mTitleTextView;
-    ImageView mImageView;
-    TextView mPriceTextView;
+
 
     private final LinkedList<CardItem> mProductList;
     private LayoutInflater mInflater;
@@ -39,6 +38,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
     @Override
     public void onBindViewHolder(@NonNull ProductAdapter.ProductViewHolder holder, int position) {
         CardItem mCurrent = mProductList.get(position);
+        holder.mTitleTextView.setText(mCurrent.getItemName());
+        holder.mImageView.setImageResource(mCurrent.getImage());
+        holder.mPriceTextView.setText(mCurrent.getPrice());
+        holder.mQuantity.setText(mCurrent.getQuantity());
+        holder.mDescription.setText(mCurrent.getDescription());
+        holder.mSubTotal.setText(mCurrent.getSubTotal());
+
 
     }
 
@@ -48,11 +54,24 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
     }
 
     class ProductViewHolder extends RecyclerView.ViewHolder {
+        TextView mTitleTextView;
+        ImageView mImageView;
+        TextView mPriceTextView;
+        TextView mQuantity;
+        TextView mDescription;
+        TextView mSubTotal;
+
         final ProductAdapter mAdapter;
         public CardView productItemView;
         public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
             super(itemView);
             productItemView = itemView.findViewById(R.id.card_generic);
+            mTitleTextView = itemView.findViewById(R.id.title_textView);
+            mPriceTextView = itemView.findViewById(R.id.price_textView);
+            mImageView = itemView.findViewById(R.id.imageView);
+            mQuantity = itemView.findViewById(R.id.quantity_textView);
+            mDescription = itemView.findViewById(R.id.description1_textView);
+            mSubTotal = itemView.findViewById(R.id.subtotal_textView);
             this.mAdapter = adapter;
         }
     }

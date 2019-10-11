@@ -3,11 +3,14 @@ package com.example.adeshinanicershop;
 import android.os.Bundle;
 
 import com.example.adeshinanicershop.model.CardItem;
+import com.example.adeshinanicershop.model.ProductAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
@@ -16,6 +19,8 @@ import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "android.adeshinashop.extra.MESSAGE";
+    private RecyclerView mRecyclerView;
+    private ProductAdapter mAdapter;
     ArrayList<CardItem> listOfItems;
 
     @Override
@@ -26,6 +31,13 @@ public class MenuActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         listOfItems= new ArrayList<CardItem>();
         populateCard();
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new ProductAdapter(this, mProductList);
+
+        mRecyclerView.setAdapter(mAdapter);
+        // Give the RecyclerView a default layout manager.
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
