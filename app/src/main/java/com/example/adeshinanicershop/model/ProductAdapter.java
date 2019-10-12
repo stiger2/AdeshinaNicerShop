@@ -2,11 +2,15 @@ package com.example.adeshinanicershop.model;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -15,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.adeshinanicershop.R;
 
 import java.util.LinkedList;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
         ProductViewHolder>  {
@@ -53,13 +59,19 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
         return mProductList.size();
     }
 
-    class ProductViewHolder extends RecyclerView.ViewHolder {
+    class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView mTitleTextView;
         ImageView mImageView;
         TextView mPriceTextView;
         TextView mQuantity;
         TextView mDescription;
         TextView mSubTotal;
+        Button increaseButton;
+        Button decreaseButton;
+        Button addToCart;
+        LinearLayout lowerLayout;
+        private final String LOG_TAG = ProductViewHolder.class.getSimpleName();
+        String message;
 
         final ProductAdapter mAdapter;
         public CardView productItemView;
@@ -72,7 +84,55 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
             mQuantity = itemView.findViewById(R.id.quantity_textView);
             mDescription = itemView.findViewById(R.id.description1_textView);
             mSubTotal = itemView.findViewById(R.id.subtotal_textView);
+            increaseButton = itemView.findViewById(R.id.button_plus);
+            decreaseButton = itemView.findViewById(R.id.button_minus);
+            addToCart = itemView.findViewById(R.id.addToCart_Button);
+            lowerLayout = itemView.findViewById(R.id.lower_layout);
+            increaseButton.setOnClickListener(this);
+            decreaseButton.setOnClickListener(this);
+            addToCart.setOnClickListener(this);
             this.mAdapter = adapter;
+        }
+
+        @Override
+        public void onClick(View v) {
+            int quantity;
+            int position = getLayoutPosition();
+            switch(v.getId()){
+                case R.id.button_plus:
+                    quantity = Integer.parseInt(mQuantity.getText().toString());
+                    if (quantity == 0)
+                        lowerLayout.setVisibility(View.VISIBLE);
+                    quantity++;
+                    mQuantity.setText(Integer.toString(quantity));
+                    message= mTitleTextView.getText() + " has been added to cart";
+                    Log.d(LOG_TAG, message);
+                    mSubTotal.setText(String.format("%.2f", Float.parseFloat(mSubTotal.getText().toString()) + Float.parseFloat(mPriceTextView.getText().toString())));
+                    break;
+                case R.id.button_minus:
+                    quantity = Integer.parseInt(mQuantity.getText().toString());
+                    if (quantity == 1)
+                        lowerLayout.setVisibility(View.INVISIBLE);
+                    if(quantity != 0)
+                        quantity--;
+                    mQuantity.setText(Integer.toString(quantity));
+                    message= mTitleTextView.getText() + " has been removed from cart";
+                    Log.d(LOG_TAG, message);
+                    mSubTotal.setText(String.format("%.2f", Float.parseFloat(mSubTotal.getText().toString()) - Float.parseFloat(mPriceTextView.getText().toString())));
+                    break;
+
+
+            }
+
+
+
+
+
+        }
+
+        public void lowerLayoutVisibility(int quantity){
+
+
         }
     }
 }

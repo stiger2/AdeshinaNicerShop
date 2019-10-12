@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
 
     <TextView
         android:id="@+id/title_textView"
@@ -46,7 +48,7 @@
 
 
         <Button
-            android:id="@+id/button_plus"
+            android:id="@+id/button_minus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="quantityDecrease"
@@ -60,7 +62,7 @@
             android:padding="14sp" />
 
         <Button
-            android:id="@+id/button_minus"
+            android:id="@+id/button_plus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="quantityIncrease"
@@ -76,6 +78,7 @@
 
 
     <LinearLayout
+        android:id="@+id/lower_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
