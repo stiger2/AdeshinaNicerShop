@@ -79,7 +79,7 @@ Ecologically grown cotton is grown using practices that help us protect biodiver
 
 
     <string name="express_delivery">express ($50)</string>
-    <string name="regular_delivery">regular ($50)</string>
+    <string name="regular_delivery">regular ($10)</string>
     <string name="no_hurry">no hurry (no cost)</string>
     <string name="shipping">Shipping</string>
 
