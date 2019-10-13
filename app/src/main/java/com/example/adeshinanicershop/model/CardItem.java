@@ -7,6 +7,8 @@ public class CardItem {
     private int image;
     private String itemName;
     private String subTotal;
+    private static int itemsInCart;
+    private static int Total;
 
     public CardItem(String description, String price, int background, String itemName, String subTotal, String quantity) {
         this.description = description;
@@ -41,6 +43,13 @@ public class CardItem {
         return quantity;
     }
 
+    public static int getItemsInCart() {
+        return itemsInCart;
+    }
+
+    public static int getTotal() {
+        return Total;
+    }
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
@@ -66,5 +75,11 @@ public class CardItem {
         this.image = image;
     }
 
+    public static void setItemsInCart(int itemsInCart) {
+        CardItem.itemsInCart = itemsInCart;
+    }
 
+    public static void setTotal(int total) {
+        Total = total;
+    }
 }

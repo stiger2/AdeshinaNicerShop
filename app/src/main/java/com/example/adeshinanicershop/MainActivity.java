@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    //Method to lauch menu activity
     public void launchMenuActivity(View view) {
         Log.d(LOG_TAG, "Start shopping Button clicked!");
         Intent intent = new Intent(this, MenuActivity.class);

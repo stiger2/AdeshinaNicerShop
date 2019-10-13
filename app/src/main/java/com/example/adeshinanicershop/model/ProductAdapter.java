@@ -29,9 +29,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
     private final LinkedList<CardItem> mProductList;
     private LayoutInflater mInflater;
 
+
     public ProductAdapter(Context context, LinkedList<CardItem> ProductList) {
         mInflater = LayoutInflater.from(context);
         this.mProductList = ProductList;
+
     }
 
     @NonNull
@@ -50,6 +52,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
         holder.mQuantity.setText(mCurrent.getQuantity());
         holder.mDescription.setText(mCurrent.getDescription());
         holder.mSubTotal.setText(mCurrent.getSubTotal());
+        holder.lowerLayout.setVisibility(View.VISIBLE);
+
+
 
 
     }
@@ -69,6 +74,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
         Button increaseButton;
         Button decreaseButton;
         Button addToCart;
+
         LinearLayout lowerLayout;
         private final String LOG_TAG = ProductViewHolder.class.getSimpleName();
         String message;
@@ -97,42 +103,51 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.
         @Override
         public void onClick(View v) {
             int quantity;
+            String subTotal;
             int position = getLayoutPosition();
             switch(v.getId()){
-                case R.id.button_plus:
+                case R.id.button_plus: //handler for the decrease button
                     quantity = Integer.parseInt(mQuantity.getText().toString());
                     if (quantity == 0)
                         lowerLayout.setVisibility(View.VISIBLE);
                     quantity++;
                     mQuantity.setText(Integer.toString(quantity));
-                    message= mTitleTextView.getText() + " has been added to cart";
+                    message= mTitleTextView.getText() + " Added to cart. Price: " + mPriceTextView.getText();;
                     Log.d(LOG_TAG, message);
-                    mSubTotal.setText(String.format("%.2f", Float.parseFloat(mSubTotal.getText().toString()) + Float.parseFloat(mPriceTextView.getText().toString())));
+                    subTotal = String.format("%.2f", Float.parseFloat(mSubTotal.getText().toString()) + Float.parseFloat(mPriceTextView.getText().toString()));
+                    mSubTotal.setText(subTotal);
+                    mProductList.get(position).setQuantity(Integer.toString(quantity));
+                    mProductList.get(position).setSubTotal(subTotal);
+                    lowerLayout.setVisibility(View.VISIBLE);
                     break;
-                case R.id.button_minus:
+                case R.id.button_minus: //hander for the increase button
                     quantity = Integer.parseInt(mQuantity.getText().toString());
-                    if (quantity == 1)
-                        lowerLayout.setVisibility(View.INVISIBLE);
-                    if(quantity != 0)
+
+                    if(quantity != 0){
                         quantity--;
-                    mQuantity.setText(Integer.toString(quantity));
-                    message= mTitleTextView.getText() + " has been removed from cart";
-                    Log.d(LOG_TAG, message);
-                    mSubTotal.setText(String.format("%.2f", Float.parseFloat(mSubTotal.getText().toString()) - Float.parseFloat(mPriceTextView.getText().toString())));
+                        mQuantity.setText(Integer.toString(quantity));
+                        message= mTitleTextView.getText() + " Removed from cart. Price: " + mPriceTextView.getText();
+                        Log.d(LOG_TAG, message);
+                        mSubTotal.setText(String.format("%.2f", Float.parseFloat(mSubTotal.getText().toString()) - Float.parseFloat(mPriceTextView.getText().toString())));
+                    }
+                    if (quantity == 0)
+                        lowerLayout.setVisibility(View.INVISIBLE);
                     break;
-
-
+                case R.id.addToCart_Button: //handler for the add to cart button
+                    increaseButton.setEnabled(false);
+                    decreaseButton.setEnabled(false);
+                    addToCart.setText("ADDED");
+                    addToCart.setEnabled(false);
             }
 
 
 
 
 
-        }
-
-        public void lowerLayoutVisibility(int quantity){
 
 
         }
+
+
     }
 }

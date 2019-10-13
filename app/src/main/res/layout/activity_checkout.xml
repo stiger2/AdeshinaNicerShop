@@ -118,31 +118,34 @@
         android:id="@+id/total_textView"
         android:layout_width="95dp"
         android:layout_height="42dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="start"
         android:text="@string/total"
         android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/thank_you_textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/pst_textView"
-        android:layout_marginLeft="24dp"
-        android:gravity="start" />
+        app:layout_constraintTop_toBottomOf="@+id/shipping_textView" />
 
     <TextView
         android:id="@+id/total_amount_textView"
         android:layout_width="103dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="end"
         android:text=""
         android:textAlignment="viewEnd"
+        app:layout_constraintBottom_toTopOf="@+id/thank_you_textView"
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toEndOf="@+id/total_textView"
-        app:layout_constraintTop_toBottomOf="@+id/pst_amount_textView"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="12dp"
-        android:gravity="end" />
+        app:layout_constraintTop_toBottomOf="@+id/shippingAmount_TextView"
+        app:layout_constraintVertical_bias="0.66" />
 
     <TextView
         android:id="@+id/thank_you_textView"
@@ -154,4 +157,39 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/shipping_textView"
+        android:layout_width="103dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="start"
+        android:textAlignment="viewStart"
+        android:text="@string/shipping"
+        app:layout_constraintBottom_toTopOf="@+id/total_textView"
+        app:layout_constraintEnd_toStartOf="@+id/pst_amount_textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/pst_textView" />
+
+    <TextView
+        android:id="@+id/shippingAmount_TextView"
+        android:layout_width="103dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="end"
+        android:textAlignment="viewEnd"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/pst_amount_textView"
+        app:layout_constraintTop_toBottomOf="@+id/pst_amount_textView"
+        app:layout_constraintBottom_toTopOf="@+id/total_amount_textView"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

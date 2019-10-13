@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.adeshinanicershop.MenuActivity">
+    <item
+        android:id="@+id/action_contact"
+        android:orderInCategory="100"
+        android:title="Contact us"
+        android:icon="@drawable/ic_contact_icon"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/view_cart"
+        android:orderInCategory="50"
+        android:title="Shopping cart"
+        android:icon="@drawable/ic_cart_icon"
+        app:showAsAction="always" />
+
+
+
+</menu>

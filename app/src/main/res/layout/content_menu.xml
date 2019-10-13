@@ -12,68 +12,48 @@
 
 
     <LinearLayout
+        android:id="@+id/upper_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:background="#f9483e"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="invisible">
 
-        <TextView
-            android:id="@+id/current_inCart"
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:paddingLeft="10dp"
-            android:paddingRight="5dp"
-            android:paddingVertical="10dp"
-            android:text="@string/current_inCart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-            android:textStyle="bold" />
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="cancel"
+            android:padding="15dp"
+            android:layout_marginRight="50dp"
+            android:text="CANCEL" />
 
-        <TextView
-            android:id="@+id/total_items"
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingRight="40dp"
-            android:text="@string/cart_items"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-            android:textStyle="bold"
-
-            />
-
-        <TextView
-            android:id="@+id/total_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="@string/cart_total_amount"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-            android:textStyle="bold"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="PROCEED TO CHECKOUT"
+            android:onClick="checkout"/>
 
 
-            />
 
-        <TextView
-            android:id="@+id/current_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:paddingRight="10dp"
-            android:paddingVertical="10dp"
-            android:text="@string/current_inCart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-            android:textStyle="bold" />
+
+
+
+
+
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
+
+
 
 </LinearLayout>

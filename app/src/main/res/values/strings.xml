@@ -18,30 +18,70 @@
     <string name="increase">+</string>
     <string name="decrease">-</string>
     <string name="cad">CAD</string>
+
     <string name="description2_text"><b>NAVY BLUE - 9240/422</b>\n\n Piqué polo shirt with Mandarin collar in matching fabric and short sleeves with ribbed trim. Front button closure.\n\n MODEL HEIGHT: 6’ 2” (189 cm). SIZE L \n\n <b>JOIN LIFE</b>\nCare for fiber: 100% ecologically grown cotton.
 Ecologically grown cotton is grown using practices that help us protect biodiversity, such as crop rotation or the use of natural fertilizers.</string>
     <string name="description1_text"><b>CAMEL - 0706/202</b>\n\n Bomber jacket made of faux leather fabric with faux fur interior and collar. Long sleeves with elasticized cuffs. Front snap button pockets. Elastic hem. Front zip closure.</string>
     <string name="description3_text"><b>WHITE - 5372/313</b>\n\n Roomy T-shirt with round neck and short sleeves. Front illustration by James Wilson. </string>
     <string name="description4_text"><b>DARK BLUE - 6045/302</b>\n\nSkinny jeans with washed effect. Five pockets. Front zip and metal button closure.</string>
+    <string name="description5_text"><b>BROWN - 0706/202</b>\n\nBomber jacket made of faux leather fabric with faux fur interior and collar. Long sleeves with elasticized cuffs. Front snap button pockets. Elastic hem. Front zip closure.</string>
+    <string name="description6_text"><b>CAMEL - 0458/301</b>\n\nLightweight knit polo with shirt collar and long sleeves. Ribbed trim. Front zip closure.</string>
+    <string name="description7_text"><b>DARK BLUE - 5575/301</b>\n\nDenim shorts with washed effect. Five pockets. Cuffed hems. Front zip and metal button closure.</string>
+    <string name="description8_text"><b>BEIGE - 3918/310</b>\n\nHigh collar jacket with long sleeves. Zip pockets at hip. Interior pocket. Front metal zip closure and adjustable hem with appliqué. </string>
+    <string name="description9_text"><b>MULTICOLOR - 2355/002</b>\n\nLace-up sneakers. Combination of colors and materials at upper with nylon, split leather trim, and technical pieces. Shoelaces with seven pairs of eyelets. Multicolor treaded sole.</string>
+    <string name="description10_text"><b>BLACK - 5628/002</b>\n\nSlipper style loafers. Black. Raised silver texture all over upper. Fringed tassel detail and metal finish at facing.</string>
+
     <string name="item1_price">250.0</string>
     <string name="item2_price">25.90</string>
     <string name="item3_price">35.90</string>
     <string name="item4_price">80.0</string>
+    <string name="item5_price">159.00</string>
+    <string name="item6_price">49.90</string>
+    <string name="item7_price">45.90</string>
+    <string name="item8_price">119.00</string>
+    <string name="item9_price">119.00</string>
+    <string name="item10_price">99.00</string>
+
     <string name="quantity1">0</string>
     <string name="quantity2">0</string>
     <string name="quantity3">0</string>
     <string name="quantity4">0</string>
+    <string name="quantity5">0</string>
+    <string name="quantity6">0</string>
+    <string name="quantity7">0</string>
+    <string name="quantity8">0</string>
+    <string name="quantity9">0</string>
+    <string name="quantity10">0</string>
+
+
     <string name="item_name_1">DOUBLE SIDED BOMBER JACKET</string>
     <string name="item_name_2">BASIC PETER PAN COLLAR SHIRT</string>
     <string name="item_name_3">T-SHIRT WITH JAMES WILSON ILLUSTRATION</string>
     <string name="item_name_4">STRETCH SKINNY JEANS</string>
+    <string name="item_name_5">DOUBLE SIDED BOMBER JACKET</string>
+    <string name="item_name_6">POLO SWEATER WITH ZIPPER</string>
+    <string name="item_name_7">BASIC DENIM SHORTS</string>
+    <string name="item_name_8">WATER REPELLENT PUFFER JACKET</string>
+    <string name="item_name_9">MIXED RETRO SNEAKERS</string>
+    <string name="item_name_10">TEXTURED LOAFERS</string>
+
     <string name="subTotal_text_1">0</string>
     <string name="subTotal_text_2">0</string>
     <string name="subTotal_text_3">0</string>
     <string name="subTotal_text_4">0</string>
+    <string name="subTotal_text_5">0</string>
+    <string name="subTotal_text_6">0</string>
+    <string name="subTotal_text_7">0</string>
+    <string name="subTotal_text_8">0</string>
+    <string name="subTotal_text_9">0</string>
+    <string name="subTotal_text_10">0</string>
 
 
 
+    <string name="express_delivery">express ($50)</string>
+    <string name="regular_delivery">regular ($50)</string>
+    <string name="no_hurry">no hurry (no cost)</string>
+    <string name="shipping">Shipping</string>
 
 
 </resources>
